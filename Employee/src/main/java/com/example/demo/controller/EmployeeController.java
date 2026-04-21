@@ -23,10 +23,6 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeService es;
 	
-	@GetMapping("/")
-	public String Home() {
-		return "Hello World";
-	}
 	
 	@PostMapping("add")
 	public void add(@RequestBody Employee emp) {
