@@ -17,4 +17,5 @@ public class Employee {
 	private Integer id;
 	private String name;
 	private Float salary;
+	private String mob;
 }
