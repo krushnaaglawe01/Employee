@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.exception.InvalidMobileNumber;
+import com.example.demo.exception.InvalidSalary;
 import com.example.demo.model.Employee;
 import com.example.demo.repository.EmployeeRepository;
 

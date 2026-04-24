@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.example.demo.exception;
 
 public class InvalidSalary extends RuntimeException {
 
