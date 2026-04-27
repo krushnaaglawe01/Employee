@@ -19,6 +19,6 @@ public class Employee {
 	private String name;
 	private Float salary;
 	@NotNull
-	@Pattern(regexp = "^[6-9][0-9]{9}",message="invlid")
+	@Pattern(regexp = "^[6-9][0-9]{9}",message="Invalid Mobile Number")
 	private String mob;
 }

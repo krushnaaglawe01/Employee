@@ -22,13 +22,20 @@ public class GlobalExceptionController {
 		return result;
 	}
 	
-	@ExceptionHandler({ MethodArgumentNotValidException.class })
-	public Map<String, String> methodArgumentNotValidException(MethodArgumentNotValidException e) {
+	@ExceptionHandler(MethodArgumentNotValidException.class)
+	public Map<String, Object> handleValidation(MethodArgumentNotValidException e) {
 
-		Map<String, String> result = new HashMap<>();
+	    Map<String, Object> response = new HashMap<>();
+	    Map<String, String> errors = new HashMap<>();
 
-		result.put("Status code", "901");
-		result.put("msg", e.getMessage());
-		return result;
+	    e.getBindingResult().getFieldErrors().forEach(error -> {
+	        errors.put(error.getField(), error.getDefaultMessage());
+	    });
+
+	    response.put("status", 400);
+	    response.put("errors", errors);
+
+	    return response;
 	}
+
 }
