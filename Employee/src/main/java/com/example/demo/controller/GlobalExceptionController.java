@@ -12,15 +12,15 @@ import com.example.demo.exception.InvalidMobileNumber;
 @RestControllerAdvice
 public class GlobalExceptionController {
 
-	@ExceptionHandler({InvalidMobileNumber.class}) 
-	public Map<String, String> invalidMobileNumber(InvalidMobileNumber e) {
-		Map<String, String> result = new HashMap<>();
-		
-		result.put("Status code", "901");
-		result.put("msg", e.getMessage());
-		
-		return result;
-	}
+//	@ExceptionHandler({InvalidMobileNumber.class}) 
+//	public Map<String, String> invalidMobileNumber(InvalidMobileNumber e) {
+//		Map<String, String> result = new HashMap<>();
+//		
+//		result.put("Status code", "901");
+//		result.put("msg", e.getMessage());
+//		
+//		return result;
+//	}
 	
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	public Map<String, Object> handleValidation(MethodArgumentNotValidException e) {
